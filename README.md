@@ -1,1 +1,7 @@
-# Libraray-Managment-System
+# api_architecture
+
+# npm install 
+
+# npm run build
+
+# npm start

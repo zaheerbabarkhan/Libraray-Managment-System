@@ -1,0 +1,636 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"AdminSaveResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"UserName": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"UserName",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AdminSaveRequest": {
+				"properties": {
+					"Name": {
+						"type": "string"
+					},
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Name",
+					"Email",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AdminLoginResponse": {
+				"properties": {
+					"token": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"token"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AdminLoginRequest": {
+				"properties": {
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Email",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"BookSaveUpdateResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"Author": {
+						"type": "string"
+					},
+					"Quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"Category": {
+						"type": "string"
+					},
+					"Availability": {
+						"type": "boolean",
+						"enum": [
+							"true"
+						],
+						"nullable": false
+					},
+					"FairPerDay": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"_id",
+					"title",
+					"Author",
+					"Quantity",
+					"Category",
+					"Availability",
+					"FairPerDay"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"BookSaveRequest": {
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"Author": {
+						"type": "string"
+					},
+					"Quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"Category": {
+						"type": "string"
+					},
+					"FairPerDay": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"title",
+					"Author",
+					"Quantity",
+					"Category",
+					"FairPerDay"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"BookUpdateRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"Author": {
+						"type": "string"
+					},
+					"Quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"Category": {
+						"type": "string"
+					},
+					"Availability": {
+						"type": "boolean",
+						"enum": [
+							"true"
+						],
+						"nullable": false
+					},
+					"FairPerDay": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"_id",
+					"title",
+					"Author",
+					"Quantity",
+					"Category",
+					"Availability",
+					"FairPerDay"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetBookRequest": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserSaveUpdateResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Name": {
+						"type": "string"
+					},
+					"Cell": {
+						"type": "string"
+					},
+					"Address": {
+						"type": "string"
+					},
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Name",
+					"Cell",
+					"Address",
+					"Email",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserSaveRequest": {
+				"properties": {
+					"Name": {
+						"type": "string"
+					},
+					"Cell": {
+						"type": "string"
+					},
+					"Address": {
+						"type": "string"
+					},
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Name",
+					"Cell",
+					"Address",
+					"Email",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserUpdateRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Name": {
+						"type": "string"
+					},
+					"Cell": {
+						"type": "string"
+					},
+					"Address": {
+						"type": "string"
+					},
+					"Email": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Name",
+					"Cell",
+					"Address",
+					"Email",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserBookIssueRequest": {
+				"properties": {
+					"UserId": {
+						"type": "string"
+					},
+					"BookId": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"UserId",
+					"BookId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"bearerAuth": {
+				"type": "http",
+				"scheme": "bearer",
+				"name": "authorization",
+				"in": "header",
+				"bearerFormat": "JWT"
+			},
+			"apiKeyAuth": {
+				"type": "apiKey",
+				"in": "header",
+				"name": "X-API-KEY"
+			}
+		}
+	},
+	"info": {
+		"title": "Libray Management API",
+		"version": "v1",
+		"description": "The FSA Food Alerts API provides access to current and recent Food Alerts: Allergy Alerts (AA), Product Recall Information Notices (PRIN) and Food Alerts for Action (FAFA). It provides applications with the facility to list alerts matching some filter criterion, and to retrieve a description of an alert.",
+		"contact": {
+			"name": "Oraclo LTD",
+			"email": "admin@orcalo.co.uk",
+			"url": "https://orcalo.co.uk/"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/admin/saveAdmin": {
+			"post": {
+				"operationId": "SaveAdmin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AdminSaveResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "Here we can save the new book to the record",
+				"tags": [
+					"Admin"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AdminSaveRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/login": {
+			"post": {
+				"operationId": "Login",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AdminLoginResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Admin"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AdminLoginRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/book/saveBook": {
+			"post": {
+				"operationId": "SaveBook",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/BookSaveUpdateResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "save the new book to the record",
+				"tags": [
+					"Book"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/BookSaveRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/book/updateBook": {
+			"put": {
+				"operationId": "UpdateBook",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/BookSaveUpdateResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "update existing book in the record",
+				"tags": [
+					"Book"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/BookUpdateRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/book/getBook": {
+			"post": {
+				"operationId": "GetBook",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/BookSaveUpdateResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "retrieving a book on the base of objectID from the record",
+				"tags": [
+					"Book"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/GetBookRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/book/getBookList": {
+			"get": {
+				"operationId": "GetBookList",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/BookSaveUpdateResponse"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get List of All the books from the record",
+				"tags": [
+					"Book"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/user/saveUser": {
+			"post": {
+				"operationId": "SaveUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserSaveUpdateResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "Save New User\r\n<hr/>",
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserSaveRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/updateUser": {
+			"put": {
+				"operationId": "UpdateUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserSaveUpdateResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserUpdateRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/issueBook": {
+			"put": {
+				"operationId": "IssueBook",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserBookIssueRequest"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	],
+	"tags": [
+		{
+			"name": "Admin",
+			"description": "Available Operations for admin "
+		}
+	]
+}
